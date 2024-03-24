@@ -29,8 +29,8 @@ useEffect(()=>{
                 ></Job>)
             }
         </div>
-        <div className="text-center my-4">
-            <button className=" btn bg-indigo-400 text-white btn-sm " onClick={()=>setDataLength()}>Show All Jobs</button>
+        <div className={`text-center my-4 ${dataLength === jobs.length && 'hidden'}`} >
+            <button className=" btn bg-indigo-400 text-white btn-sm " onClick={()=>setDataLength(jobs.length)}>Show All Jobs</button>
         </div>
         </div>
     );

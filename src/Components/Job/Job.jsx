@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { CiLocationOn } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
+import { Link } from 'react-router-dom';
 const Job = ({job}) => {
-    const{logo,job_title,company_name,job_type,location,remote_or_onsite,salary}=job;
+    const{logo,job_title,company_name,job_type,location,remote_or_onsite,salary,id}=job;
 
     return (
         <div className='border-2 rounded-md mt-5 p-5 hover:outline-2  hover:outline-double hover:outline-indigo-400'>
@@ -21,7 +22,9 @@ const Job = ({job}) => {
             <p className='text-xs flex gap-1 items-center'><span><MdAttachMoney></MdAttachMoney></span>
             {salary}</p>
             </div>
-            <button className="btn bg-indigo-400 text-white  btn-sm mt-2">View Details</button>
+           <Link to={`/job/${id}`}>
+           <button className="btn bg-indigo-400 text-white  btn-sm mt-2">View Details</button>
+           </Link>
         </div>
     );
 };
